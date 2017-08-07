@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Simpleton Calculator</title>
+	<!--creates a link for the font family-->
+	<link href="https://fonts.googleapis.com/css?family=Audiowide|Monoton|Press+Start+2P" rel="stylesheet">
+
+</head>
+
+
+	<style type="text/css">
+	
+		body {
+			background: url(http://i.imgur.com/J1uxwWY.jpg);
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			text-align: center;
+			font-family: 'Audiowide', cursive;
+		}
+
+		h1 {
+			color: #05896a;
+			font-weight: bold;
+			font-size: 70px;
+			border-radius: 1px solid black;
+		}
+
+		#calc {
+			background-color: rgba(80, 229, 177, 0.5);
+			width: 250px;
+			height: 600px;
+			border: 1px solid black;
+			border-radius: 20px;
+			margin: 50px auto;
+			box-shadow: 0px 0px 3px 6px#ccc
+		}
+
+		#display {
+			background-color: rgb(255, 238, 181);
+			margin-bottom: 20px;
+			height: 50px;
+			width: 10em;
+			border: 1px solid black;
+			border-radius: 5px;
+			box-shadow: 0px 0px 1px 1px black;
+			text-align: right;
+			font-family: 'Audiowide', cursive;
+			font: 20px bold;
+		}
+
+		#keys {
+			background-color: rgba(80, 229, 177);
+			width: 40px;
+			height: 40px;
+			margin: 4px;
+			box-shadow: 0px 0px 2px 1px black;
+			border-radius: 2px;
+			outline: none;
+			font-family: 'Audiowide', cursive;
+			font-weight: bold;
+		}
+
+		#equals	{
+			width: 95.3px;
+			height: 40px;
+			margin: 4px;
+			box-shadow: 0px 0px 2px 1px black;
+			border-radius: 2px;
+			outline: none;
+			font-family: 'Audiowide', cursive;
+		}
+
+	</style>
+
+
+	<script type="text/javascript">
+
+
+//creates a function to evaluate the equal sign and if there is a calculation that is undefined.
+		function umm(val) {
+			document.getElementById("display").value = val;
+		}
+				
+		function equ() {
+			try {
+				umm(eval(document.getElementById("display").value))
+			}
+			catch(equ){
+				umm('error')
+			}
+
+		}
+
+		//presents the value of the button or function that is clicked
+		function calc(val) {
+			document.getElementById("display").value += val;
+		}
+
+
+
+
+	</script>
+
+
+
+
+<body>
+	<h1>JavaScript <span style="color: #01a87e">Simpleton</span> Calculator</h1>
+
+<!--creates buttons for the keys on the calculator and giving them each a value--> 
+	<div id="calc">
+		<form>
+		<input type="text" id="display" readonly>
+			<br
+			<p>
+				<input type="button" value="C" id="keys" onclick='umm("")'>
+				<input type="button" value="(" id="keys" onclick='calc("(")'>
+				<input type="button" value=")" id="keys" onclick='calc(")")'>
+				<input type="button" value="/" id="keys" onclick='calc("/")'>
+			</p>
+			<br>
+			<p>
+				<input type="button" value="7" id="keys" onclick='calc("7")'>
+				<input type="button" value="8" id="keys" onclick='calc("8")'>
+				<input type="button" value="9" id="keys" onclick='calc("9")'>
+				<input type="button" value="*" id="keys" onclick='calc("*")'>
+			</p>
+			<br>
+			<p>
+				<input type="button" value="4" id="keys" onclick='calc("4")'>
+				<input type="button" value="5" id="keys" onclick='calc("5")'>
+				<input type="button" value="6" id="keys" onclick='calc("6")'>
+				<input type="button" value="-" id="keys" onclick='calc("-")'>
+			</p>
+			<br>
+			<p>
+				<input type="button" value="1" id="keys" onclick='calc("1")'>
+				<input type="button" value="2" id="keys" onclick='calc("2")'>
+				<input type="button" value="3" id="keys" onclick='calc("3")'>
+				<input type="button" value="+" id="keys" onclick='calc("+")'>
+			</p>
+			<br>
+			<p>
+				<input type="button" value="0" id="keys" onclick='calc("0")'>
+				<input type="button" value="." id="keys" onclick='calc(".")'>
+				<input type="button" value="=" id="equals" onclick='equ()'>
+			<br>
+			<h3>JS Simpleton Calculator</h3>
+		</form>
+	</div>
+
+
+
+
+</body>
+</html>
